@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Flowdesk — Where Async Teams Thrive</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo">
+    <div class="logo-mark">F</div>
+    Flowdesk
+  </div>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#testimonials">Customers</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" class="nav-ghost">Sign in</a>
+    <a href="#" class="nav-cta" onclick="showToast('Starting your free trial! ✨')">Start free trial</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="mesh-canvas"></canvas>
+  <div class="hero-noise"></div>
+
+  <div class="hero-content fu in">
+    <div class="hero-badge">New — Flowdesk 3.0 is live</div>
+    <h1 class="hero-h1">
+      The workspace where<br/>
+      <em>async teams move faster</em>
+    </h1>
+    <p class="hero-sub">
+      Flowdesk replaces the chaos of scattered tools — docs, tasks, threads, and goals — 
+      with one calm, focused workspace built for deep work.
+    </p>
+    <div class="hero-cta-row">
+      <button class="btn-hero" onclick="showToast('Free trial started — no credit card needed ✨')">
+        Start for free — no card needed
+      </button>
+      <button class="btn-hero-ghost" onclick="showToast('Demo loading...')">Watch 2-min demo →</button>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-avatars">
+        <div class="proof-avatar" style="background:linear-gradient(135deg,#06B6D4,#6B7FD7)">JK</div>
+        <div class="proof-avatar" style="background:linear-gradient(135deg,#8B5CF6,#EC4899)">AS</div>
+        <div class="proof-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444)">MR</div>
+        <div class="proof-avatar" style="background:linear-gradient(135deg,#10B981,#3B82F6)">TL</div>
+      </div>
+      Trusted by <strong style="color:var(--warm-white);margin:0 4px;">14,200+</strong> teams worldwide
+    </div>
+  </div>
+
+  <!-- Mini Dashboard mockup -->
+  <div class="hero-dashboard fu in">
+    <div class="dashboard-bar">
+      <div class="db-dot" style="background:#FF5F57"></div>
+      <div class="db-dot" style="background:#FFBD2E"></div>
+      <div class="db-dot" style="background:#28C840"></div>
+      <div class="db-url">app.flowdesk.io / workspace / q4-roadmap</div>
+    </div>
+    <div class="dashboard-inner">
+      <div class="dash-sidebar">
+        <div class="dash-nav-item active">
+          <div class="dni-icon">📋</div>Tasks
+        </div>
+        <div class="dash-nav-item">
+          <div class="dni-icon">📄</div>Docs
+        </div>
+        <div class="dash-nav-item">
+          <div class="dni-icon">💬</div>Threads
+        </div>
+        <div class="dash-nav-item">
+          <div class="dni-icon">🎯</div>Goals
+        </div>
+        <div class="dash-nav-item">
+          <div class="dni-icon">📊</div>Reports
+        </div>
+        <div class="dash-nav-item">
+          <div class="dni-icon">⚙️</div>Settings
+        </div>
+      </div>
+      <div class="dash-main">
+        <div class="dash-stat-row">
+          <div class="dash-stat">
+            <div class="ds-label">On Track</div>
+            <div class="ds-val">24</div>
+            <div class="ds-change">↑ 12% this week</div>
+          </div>
+          <div class="dash-stat">
+            <div class="ds-label">Velocity</div>
+            <div class="ds-val">94<span style="font-size:.8rem;color:var(--muted)">pts</span></div>
+            <div class="ds-change">↑ Best sprint yet</div>
+          </div>
+          <div class="dash-stat">
+            <div class="ds-label">Shipped</div>
+            <div class="ds-val">8</div>
+            <div class="ds-change" style="color:#06B6D4">↑ 3 today</div>
+          </div>
+        </div>
+        <div class="dash-chart">
+          <div class="bar-col" style="height:40%"></div>
+          <div class="bar-col" style="height:55%"></div>
+          <div class="bar-col" style="height:35%"></div>
+          <div class="bar-col" style="height:70%"></div>
+          <div class="bar-col" style="height:50%"></div>
+          <div class="bar-col" style="height:85%"></div>
+          <div class="bar-col" style="height:65%"></div>
+          <div class="bar-col" style="height:90%"></div>
+          <div class="bar-col" style="height:75%"></div>
+          <div class="bar-col" style="height:100%"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="feat-card" style="border-radius:8px;padding:10px 14px;">
+            <div class="fc-avatar" style="background:rgba(6,182,212,.15)">🚀</div>
+            <div><div class="fc-name">Launch API v3</div><div class="fc-task">Backend · Due today</div></div>
+            <div class="fc-tag tag-prog">In progress</div>
+          </div>
+          <div class="feat-card" style="border-radius:8px;padding:10px 14px;">
+            <div class="fc-avatar" style="background:rgba(52,211,153,.15)">✅</div>
+            <div><div class="fc-name">Design System Tokens</div><div class="fc-task">Design · Completed</div></div>
+            <div class="fc-tag tag-done">Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO STRIP -->
+<div class="logo-strip">
+  <p class="strip-label">Trusted by fast-moving teams at</p>
+  <div class="strip-track">
+    <span class="strip-logo">Linear</span>
+    <span class="strip-logo">Vercel</span>
+    <span class="strip-logo">Loom</span>
+    <span class="strip-logo">Figma</span>
+    <span class="strip-logo">Notion</span>
+    <span class="strip-logo">Stripe</span>
+    <span class="strip-logo">Raycast</span>
+    <span class="strip-logo">Supabase</span>
+    <span class="strip-logo">Planetscale</span>
+    <span class="strip-logo">Clerk</span>
+    <!-- duplicate for seamless loop -->
+    <span class="strip-logo">Linear</span>
+    <span class="strip-logo">Vercel</span>
+    <span class="strip-logo">Loom</span>
+    <span class="strip-logo">Figma</span>
+    <span class="strip-logo">Notion</span>
+    <span class="strip-logo">Stripe</span>
+    <span class="strip-logo">Raycast</span>
+    <span class="strip-logo">Supabase</span>
+    <span class="strip-logo">Planetscale</span>
+    <span class="strip-logo">Clerk</span>
+  </div>
+</div>
+
+<!-- FEATURES — SPLIT -->
+<section id="features" class="section">
+  <div class="inner">
+    <div class="feat-left fu">
+      <div class="s-tag">Core features</div>
+      <h2 class="s-title">Everything your<br/><em>team actually needs</em></h2>
+      <p class="s-body">
+        Stop paying for five tools that don't talk to each other. Flowdesk brings together the workflows teams rely on, woven into one coherent experience.
+      </p>
+      <div class="feat-list">
+        <div class="feat-item active" onclick="setActive(this)">
+          <div class="fi-icon-wrap">📋</div>
+          <div>
+            <div class="fi-title">Smart Task Management</div>
+            <div class="fi-desc">Kanban, list, or timeline — your team's tasks, auto-prioritized by AI based on deadlines and dependencies.</div>
+          </div>
+        </div>
+        <div class="feat-item" onclick="setActive(this)">
+          <div class="fi-icon-wrap">💬</div>
+          <div>
+            <div class="fi-title">Threaded Discussions</div>
+            <div class="fi-desc">Context-rich threads attached directly to tasks and docs. Decisions live where the work happens.</div>
+          </div>
+        </div>
+        <div class="feat-item" onclick="setActive(this)">
+          <div class="fi-icon-wrap">📄</div>
+          <div>
+            <div class="fi-title">Living Documents</div>
+            <div class="fi-desc">Docs that link to tasks, pull live data, and never go stale. Your team's knowledge base, actually maintained.</div>
+          </div>
+        </div>
+        <div class="feat-item" onclick="setActive(this)">
+          <div class="fi-icon-wrap">🎯</div>
+          <div>
+            <div class="fi-title">OKR & Goal Tracking</div>
+            <div class="fi-desc">Set quarterly goals, cascade them to team tasks, and watch progress update automatically as work is completed.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-right fu">
+      <div class="feat-visual">
+        <div class="feat-glow"></div>
+        <div class="feat-cards">
+          <div class="feat-card">
+            <div class="fc-avatar" style="background:rgba(6,182,212,.15)">🚀</div>
+            <div><div class="fc-name">Launch API v3</div><div class="fc-task">Backend · Sarah K.</div></div>
+            <div class="fc-tag tag-prog">In progress</div>
+          </div>
+          <div class="feat-card">
+            <div class="fc-avatar" style="background:rgba(52,211,153,.15)">✅</div>
+            <div><div class="fc-name">Design System v2</div><div class="fc-task">Design · Alex M.</div></div>
+            <div class="fc-tag tag-done">Done</div>
+          </div>
+          <div class="feat-card">
+            <div class="fc-avatar" style="background:rgba(251,191,36,.15)">📝</div>
+            <div><div class="fc-name">Q4 Roadmap Doc</div><div class="fc-task">Product · Tom R.</div></div>
+            <div class="fc-tag tag-rev">Review</div>
+          </div>
+          <div class="feat-card">
+            <div class="fc-avatar" style="background:rgba(139,92,246,.15)">🎯</div>
+            <div><div class="fc-name">User Retention OKR</div><div class="fc-task">All teams · 68% done</div></div>
+            <div class="fc-tag tag-prog">On track</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary 6-card grid -->
+  <div class="feat-grid">
+    <div class="fg-card fu">
+      <div class="fg-icon">⚡</div>
+      <div class="fg-title">Keyboard-first</div>
+      <div class="fg-desc">Full command palette. Every action is one shortcut away — your hands never leave the keyboard.</div>
+    </div>
+    <div class="fg-card fu">
+      <div class="fg-icon">🤖</div>
+      <div class="fg-title">AI Summaries</div>
+      <div class="fg-desc">Catch up on a 200-message thread in 10 seconds. AI surfaces what changed and what needs your attention.</div>
+    </div>
+    <div class="fg-card fu">
+      <div class="fg-icon">🔗</div>
+      <div class="fg-title">Deep Integrations</div>
+      <div class="fg-desc">GitHub, Figma, Slack, and 80+ more. Two-way sync keeps everything in one source of truth.</div>
+    </div>
+    <div class="fg-card fu">
+      <div class="fg-icon">🔒</div>
+      <div class="fg-title">SOC 2 Type II</div>
+      <div class="fg-desc">Enterprise-grade security. SSO, audit logs, granular permissions, and end-to-end encryption at rest.</div>
+    </div>
+    <div class="fg-card fu">
+      <div class="fg-icon">📱</div>
+      <div class="fg-title">Native Mobile</div>
+      <div class="fg-desc">iOS and Android apps that feel like they belong on the platform — not a responsive website in disguise.</div>
+    </div>
+    <div class="fg-card fu">
+      <div class="fg-icon">📊</div>
+      <div class="fg-title">Custom Reports</div>
+      <div class="fg-desc">Build dashboards from any data in your workspace. No SQL, no exports — just drag, filter, and share.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stat-block fu">
+    <div class="sb-num">14,200<span style="color:var(--cyan)">+</span></div>
+    <div class="sb-label">Teams using Flowdesk</div>
+  </div>
+  <div class="stat-block fu">
+    <div class="sb-num">99.98<span style="font-size:1.5rem">%</span></div>
+    <div class="sb-label">Uptime SLA</div>
+  </div>
+  <div class="stat-block fu">
+    <div class="sb-num">3.2<span style="color:var(--cyan)">×</span></div>
+    <div class="sb-label">Avg. productivity gain</div>
+  </div>
+  <div class="stat-block fu">
+    <div class="sb-num">4.9<span style="font-size:1.5rem">★</span></div>
+    <div class="sb-label">Average review score</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="section section-alt">
+  <div class="s-tag" style="justify-content:center;display:flex;">How it works</div>
+  <h2 class="s-title" style="text-align:center;">Up and running in minutes,<br/>not months</h2>
+  <p class="s-body" style="text-align:center;">
+    No 6-week onboarding. No consultant required. Most teams are fully operational within their first afternoon.
+  </p>
+  <div class="how-steps">
+    <div class="how-step fu">
+      <div class="hs-num">1</div>
+      <div class="hs-icon">🏢</div>
+      <div class="hs-title">Create your workspace</div>
+      <div class="hs-desc">Sign up, name your workspace, and invite your team. Takes under 60 seconds.</div>
+    </div>
+    <div class="how-step fu">
+      <div class="hs-num">2</div>
+      <div class="hs-icon">⚙️</div>
+      <div class="hs-title">Import your existing work</div>
+      <div class="hs-desc">One-click migration from Linear, Jira, Notion, or Asana. Your data arrives intact and organized.</div>
+    </div>
+    <div class="how-step fu">
+      <div class="hs-num">3</div>
+      <div class="hs-icon">🚀</div>
+      <div class="hs-title">Ship faster together</div>
+      <div class="hs-desc">Your team has one home for work. Less context-switching, more deep focus, faster delivery.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <div class="s-tag fu">Customer stories</div>
+  <h2 class="s-title fu">Teams that switched<br/><em>never looked back</em></h2>
+  <p class="s-body fu" style="margin-bottom:52px;">
+    Over 14,000 teams have moved their work into Flowdesk. Here's what they say six months in.
+  </p>
+  <div class="testi-grid">
+    <div class="testi-card featured fu">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote">
+        "We replaced Linear, Notion, and Slack threads with Flowdesk three months ago. Our sprint velocity is up 40% and our engineers actually enjoy standups now because everyone has context before the call. This is what collaborative software should feel like."
+      </div>
+      <div class="testi-author">
+        <div class="ta-avatar" style="background:linear-gradient(135deg,#06B6D4,#6B7FD7)">SK</div>
+        <div>
+          <div class="ta-name">Sarah Kim</div>
+          <div class="ta-role">VP of Engineering, Luminary AI</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fu">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote">
+        "The AI catch-up feature alone saved my week. I was out sick for 3 days and came back to a 10-second summary of every thread. Genuinely magical."
+      </div>
+      <div class="testi-author">
+        <div class="ta-avatar" style="background:linear-gradient(135deg,#8B5CF6,#EC4899)">MR</div>
+        <div>
+          <div class="ta-name">Marcus Reid</div>
+          <div class="ta-role">Product Lead, Forma</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fu">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote">
+        "Migrating a 60-person team from Jira took two hours. The import was flawless and our PMs were up to speed by lunch."
+      </div>
+      <div class="testi-author">
+        <div class="ta-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444)">TL</div>
+        <div>
+          <div class="ta-name">Tara Liu</div>
+          <div class="ta-role">COO, Petal Health</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fu">
+      <div class="stars">★★★★★</div>
+      <div class="testi-quote">
+        "Finally a tool that doesn't feel like enterprise software from 2015. Flowdesk has the craft of a consumer app with the power of enterprise tooling."
+      </div>
+      <div class="testi-author">
+        <div class="ta-avatar" style="background:linear-gradient(135deg,#10B981,#3B82F6)">JC</div>
+        <div>
+          <div class="ta-name">Jordan Chen</div>
+          <div class="ta-role">Design Lead, Capsule</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section section-alt">
+  <div class="s-tag fu" style="justify-content:center;display:flex;">Pricing</div>
+  <h2 class="s-title fu">Simple pricing,<br/>no surprises</h2>
+  <p class="s-body fu" style="max-width:460px;">
+    Start free. Scale as you grow. No hidden seats, no feature paywalls buried in fine print.
+  </p>
+  <div class="pricing-grid" style="margin-top:52px;">
+    <div class="pricing-card fu">
+      <div class="pc-plan">Starter</div>
+      <div class="pc-price">
+        <span class="pc-dollar">$</span>
+        <span class="pc-amount">0</span>
+        <span class="pc-per">/ month</span>
+      </div>
+      <div class="pc-desc">Perfect for small teams getting started. Free forever for up to 5 members.</div>
+      <ul class="pc-features">
+        <li>Up to 5 team members</li>
+        <li>Unlimited tasks & docs</li>
+        <li>7-day activity history</li>
+        <li>3 active projects</li>
+        <li class="muted">AI features</li>
+        <li class="muted">Custom integrations</li>
+        <li class="muted">Priority support</li>
+      </ul>
+      <button class="btn-plan" onclick="showToast('Opening signup for Starter...')">Get started free</button>
+    </div>
+    <div class="pricing-card popular fu">
+      <span class="popular-badge">Most popular</span>
+      <div class="pc-plan">Growth</div>
+      <div class="pc-price">
+        <span class="pc-dollar">$</span>
+        <span class="pc-amount">18</span>
+        <span class="pc-per">/ seat / mo</span>
+      </div>
+      <div class="pc-desc">For growing teams that need AI, integrations, and unlimited history.</div>
+      <ul class="pc-features">
+        <li>Unlimited members</li>
+        <li>Unlimited projects</li>
+        <li>Full activity history</li>
+        <li>AI summaries & assist</li>
+        <li>80+ integrations</li>
+        <li>Custom views & reports</li>
+        <li class="muted">SSO & SAML</li>
+      </ul>
+      <button class="btn-plan btn-plan-primary" onclick="showToast('Starting Growth trial — 14 days free ✨')">Start 14-day free trial</button>
+    </div>
+    <div class="pricing-card fu">
+      <div class="pc-plan">Enterprise</div>
+      <div class="pc-price">
+        <span class="pc-amount" style="font-size:2rem;padding-bottom:2px;">Custom</span>
+      </div>
+      <div class="pc-desc">For organizations that need security, compliance, and dedicated support.</div>
+      <ul class="pc-features">
+        <li>Everything in Growth</li>
+        <li>SSO & SAML</li>
+        <li>SOC 2 / HIPAA compliance</li>
+        <li>Audit logs</li>
+        <li>Dedicated CSM</li>
+        <li>SLA guarantee</li>
+        <li>Custom contracts</li>
+      </ul>
+      <button class="btn-plan" onclick="showToast('Opening enterprise inquiry...')">Talk to sales</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-content">
+    <div class="s-tag fu" style="justify-content:center;display:flex;">Get started</div>
+    <h2 class="s-title fu">
+      Your team's best work<br/>starts <em>today</em>
+    </h2>
+    <p class="s-body fu" style="max-width:480px;">
+      Join 14,200+ teams who stopped fighting their tools and started actually building. Free to start. No credit card.
+    </p>
+    <div class="cta-btns fu">
+      <button class="btn-hero" onclick="showToast('Welcome to Flowdesk! Creating your workspace... 🚀')">
+        Create your workspace →
+      </button>
+      <button class="btn-hero-ghost" onclick="showToast('Opening live demo...')">
+        See a live demo
+      </button>
+    </div>
+    <p class="cta-note fu">Free 14-day trial on Growth · No credit card · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-mark">F</div>
+        Flowdesk
+      </div>
+      <p>The workspace where async teams move faster. Built by makers, for makers.</p>
+      <div class="footer-social">
+        <a href="#" class="fsoc" title="Twitter">𝕏</a>
+        <a href="#" class="fsoc" title="GitHub">⌥</a>
+        <a href="#" class="fsoc" title="LinkedIn">in</a>
+        <a href="#" class="fsoc" title="Discord">◈</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+        <li><a href="#">Integrations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">API Reference</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Status</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers — <span style="color:var(--cyan)">6 open</span></a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Flowdesk, Inc. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
