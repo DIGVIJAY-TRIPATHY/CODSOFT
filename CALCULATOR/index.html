@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Calculus — Precision Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scene">
+
+  <!-- ══ HISTORY PANEL ══════════════════════════════ -->
+  <aside class="history-panel" id="historyPanel">
+    <div class="history-header">
+      <span class="history-title">History</span>
+      <button class="history-clear" id="clearHistory">Clear</button>
+    </div>
+    <div class="history-list" id="historyList">
+      <div class="history-empty" id="historyEmpty">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+        </svg>
+        <p>Calculations will<br/>appear here</p>
+      </div>
+    </div>
+    <div class="kb-hint">
+      <span class="kb-badge">0–9</span>
+      <span class="kb-sep">·</span>
+      <span class="kb-badge">+ – * /</span>
+      <span class="kb-sep">·</span>
+      <span class="kb-badge">Enter</span>
+      <span class="kb-sep">·</span>
+      <span class="kb-badge">Esc</span>
+    </div>
+  </aside>
+
+  <!-- ══ CALCULATOR ════════════════════════════════ -->
+  <main class="calc" id="calc">
+
+    <!-- Brand strip -->
+    <div class="calc-brand">
+      <span class="brand-name">Calculus</span>
+      <div class="brand-mode">
+        <div class="mode-dot"></div>
+        <span class="mode-label" id="modeLabel">Standard</span>
+      </div>
+    </div>
+
+    <!-- Display -->
+    <div class="display" id="display">
+      <div class="display-expr" id="displayExpr">&nbsp;</div>
+      <div class="display-main">
+        <div class="display-number large" id="displayNumber">0</div>
+        <div class="cursor" id="cursor"></div>
+      </div>
+    </div>
+
+    <!-- Button Grid -->
+    <div class="grid" id="grid">
+      <!-- Row 1: utility -->
+      <button class="key key-fn" data-action="clear"      tabindex="0"><div class="key-inner"><span class="sym">AC</span></div></button>
+      <button class="key key-fn" data-action="sign"       tabindex="0"><div class="key-inner"><span class="sym">+/−</span></div></button>
+      <button class="key key-fn" data-action="percent"    tabindex="0"><div class="key-inner"><span class="sym">%</span></div></button>
+      <button class="key key-op" data-action="operator" data-value="÷" tabindex="0"><div class="key-inner"><span class="sym">÷</span></div></button>
+
+      <!-- Row 2 -->
+      <button class="key" data-action="digit" data-value="7" tabindex="0"><div class="key-inner"><span class="sym">7</span></div></button>
+      <button class="key" data-action="digit" data-value="8" tabindex="0"><div class="key-inner"><span class="sym">8</span></div></button>
+      <button class="key" data-action="digit" data-value="9" tabindex="0"><div class="key-inner"><span class="sym">9</span></div></button>
+      <button class="key key-op" data-action="operator" data-value="×" tabindex="0"><div class="key-inner"><span class="sym">×</span></div></button>
+
+      <!-- Row 3 -->
+      <button class="key" data-action="digit" data-value="4" tabindex="0"><div class="key-inner"><span class="sym">4</span></div></button>
+      <button class="key" data-action="digit" data-value="5" tabindex="0"><div class="key-inner"><span class="sym">5</span></div></button>
+      <button class="key" data-action="digit" data-value="6" tabindex="0"><div class="key-inner"><span class="sym">6</span></div></button>
+      <button class="key key-op" data-action="operator" data-value="−" tabindex="0"><div class="key-inner"><span class="sym">−</span></div></button>
+
+      <!-- Row 4 -->
+      <button class="key" data-action="digit" data-value="1" tabindex="0"><div class="key-inner"><span class="sym">1</span></div></button>
+      <button class="key" data-action="digit" data-value="2" tabindex="0"><div class="key-inner"><span class="sym">2</span></div></button>
+      <button class="key" data-action="digit" data-value="3" tabindex="0"><div class="key-inner"><span class="sym">3</span></div></button>
+      <button class="key key-op" data-action="operator" data-value="+" tabindex="0"><div class="key-inner"><span class="sym">+</span></div></button>
+
+      <!-- Row 5 -->
+      <button class="key key-wide" data-action="digit" data-value="0" tabindex="0"><div class="key-inner" style="justify-content:flex-start;padding-left:22px"><span class="sym">0</span></div></button>
+      <button class="key" data-action="decimal"   tabindex="0"><div class="key-inner"><span class="sym">.</span></div></button>
+      <button class="key key-eq"  data-action="equals"   tabindex="0"><div class="key-inner"><span class="sym">=</span></div></button>
+    </div>
+
+  </main>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
